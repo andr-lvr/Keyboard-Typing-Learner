@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Kewords_Typing_Learner
 {
-
-    internal class Program
+    internal class General
     {
-        static void Main(string[] args)
+        private HashSet<string> words = new HashSet<string>();
+        public HashSet<string> GetWords()
         {
-            
+            return words;
         }
     }
 }

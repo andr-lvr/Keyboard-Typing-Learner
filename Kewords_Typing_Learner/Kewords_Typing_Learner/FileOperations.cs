@@ -7,29 +7,27 @@ using System.Threading.Tasks;
 
 namespace Kewords_Typing_Learner
 {
-    internal class App
-    {
-        // Use meaningful names and follow camelCase convention
-        private HashSet<string> words = new HashSet<string>();
+     static class FileOperation {
 
-        // Use a more descriptive method name
-        public void ReadFileFromPath()
+        // READ FROM FILE
+        public static void ReadFileFromPath(General general)
+
         {
+            HashSet<string> _words = general.GetWords();
             Console.WriteLine("Enter the path to the file:");
             string filePath = Console.ReadLine();
 
             // Clear existing words before reading new ones
-            words.Clear();
-            words = ReadWordsFromFile(filePath, words);
+            _words.Clear();
+            _words = ReadWordsFromFile(filePath, _words);
 
             Console.WriteLine("Words read from the file:");
-            foreach (string word in words)
+            foreach (string word in _words)
             {
                 Console.WriteLine(word);
             }
         }
-
-        private HashSet<string> ReadWordsFromFile(string filePath, HashSet<string> lineWords)
+        private static HashSet<string> ReadWordsFromFile(string filePath, HashSet<string> lineWords)
         {
             HashSet<string> uniqueWords = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -64,8 +62,8 @@ namespace Kewords_Typing_Learner
             return uniqueWords;
         }
 
-
-        public void WriteWordsToFile()
+        // WRITE TO FILE
+        public static void WriteWordsToFile(HashSet<string> _words)
         {
             string downloadsFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents";
             string filePath = Path.Combine(downloadsFolder, "output.txt");
@@ -74,7 +72,7 @@ namespace Kewords_Typing_Learner
             {
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
-                    foreach (string word in words)
+                    foreach (string word in _words)
                     {
                         writer.WriteLine(word);
                     }
@@ -88,25 +86,6 @@ namespace Kewords_Typing_Learner
                 // You may choose to handle the exception differently based on your requirements.
             }
         }
-
-        
-
-        // add own words
-
-        // check for repeats
-
-
-
-
-
-        // learn typing 
-        // score 
-        // time count
-
-
-
-
-
 
     }
 }
