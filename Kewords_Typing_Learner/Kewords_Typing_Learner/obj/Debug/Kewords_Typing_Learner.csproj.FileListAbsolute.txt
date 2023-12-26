@@ -1,0 +1,7 @@
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\bin\Debug\Kewords_Typing_Learner.exe.config
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\bin\Debug\Kewords_Typing_Learner.exe
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\bin\Debug\Kewords_Typing_Learner.pdb
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\obj\Debug\Kewords_Typing_Learner.csproj.AssemblyReference.cache
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\obj\Debug\Kewords_Typing_Learner.csproj.CoreCompileInputs.cache
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\obj\Debug\Kewords_Typing_Learner.exe
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\Kewords_Typing_Learner\Kewords_Typing_Learner\obj\Debug\Kewords_Typing_Learner.pdb

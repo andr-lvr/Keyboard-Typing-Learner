@@ -9,47 +9,48 @@ namespace Kewords_Typing_Learner
 {
     internal class App
     {
-        // variables
+        // Use meaningful names and follow camelCase convention
+        private HashSet<string> words = new HashSet<string>();
 
-        // general 
-        private void ReadFileFromPath()
+        // Use a more descriptive method name
+        public void ReadFileFromPath()
         {
             Console.WriteLine("Enter the path to the file:");
             string filePath = Console.ReadLine();
 
-            List<string> words = ReadWordsFromFile(filePath);
+            // Clear existing words before reading new ones
+            words.Clear();
+            words = ReadWordsFromFile(filePath, words);
 
             Console.WriteLine("Words read from the file:");
             foreach (string word in words)
             {
                 Console.WriteLine(word);
             }
-
         }
 
-        static List<string> ReadWordsFromFile(string filePath)
+        private HashSet<string> ReadWordsFromFile(string filePath, HashSet<string> lineWords)
         {
-            List<string> words = new List<string>();
+            HashSet<string> uniqueWords = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
             try
             {
-                using (StreamReader reader = new StreamReader(filePath))
+                // Use File.ReadAllLines to read all lines from a file
+                string[] wordsFromFile = File.ReadAllLines(filePath);
+
+                foreach (string word in wordsFromFile)
                 {
-                    while (!reader.EndOfStream)
+                    // Remove any leading or trailing punctuation
+                    string cleanedWord = word.Trim(new char[] { ' ', ',', '.', ';', ':', '!', '?' });
+
+                    // Add the cleaned word to the HashSet if it's not empty
+                    if (!string.IsNullOrEmpty(cleanedWord))
                     {
-                        string line = reader.ReadLine();
-                        string[] lineWords = line.Split(' ');
-
-                        foreach (string word in lineWords)
+                        // Use HashSet.Add directly instead of checking Contains
+                        if (uniqueWords.Add(cleanedWord))
                         {
-                            // Remove any leading or trailing punctuation
-                            string cleanedWord = word.Trim(new char[] { ' ', ',', '.', ';', ':', '!', '?' });
-
-                            // Add the cleaned word to the list if it's not empty
-                            if (!string.IsNullOrEmpty(cleanedWord))
-                            {
-                                words.Add(cleanedWord);
-                            }
+                            // Handle repeated word (you can log or take any other action)
+                            Console.WriteLine($"Repeated word: {cleanedWord}");
                         }
                     }
                 }
@@ -60,11 +61,15 @@ namespace Kewords_Typing_Learner
                 // You may choose to handle the exception differently based on your requirements.
             }
 
-            return words;
+            return uniqueWords;
         }
 
-        static void WriteWordsToFile(List<string> words, string filePath)
+
+        public void WriteWordsToFile()
         {
+            string downloadsFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents";
+            string filePath = Path.Combine(downloadsFolder, "output.txt");
+
             try
             {
                 using (StreamWriter writer = new StreamWriter(filePath))
@@ -74,6 +79,8 @@ namespace Kewords_Typing_Learner
                         writer.WriteLine(word);
                     }
                 }
+
+                Console.WriteLine($"File written successfully to: {filePath}");
             }
             catch (Exception e)
             {
@@ -82,23 +89,14 @@ namespace Kewords_Typing_Learner
             }
         }
 
-        // read from file
-
-        // push into arr
+        
 
         // add own words
-        // save into file
+
         // check for repeats
 
 
-        static void Main()
-        {
-            
 
-           
-        }
-
-        
 
 
         // learn typing 

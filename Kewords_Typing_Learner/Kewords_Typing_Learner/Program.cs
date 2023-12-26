@@ -14,7 +14,8 @@ namespace Kewords_Typing_Learner
         static void Main(string[] args)
         {
             App main = new App();
-            main.Run();
+            main.ReadFileFromPath();
+            main.WriteWordsToFile();
         }
     }
 }
