@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kewords_Typing_Learner", "Kewords_Typing_Learner\Kewords_Typing_Learner.csproj", "{BEEBC891-2562-4A51-9A07-32833D61A9C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEEBC891-2562-4A51-9A07-32833D61A9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEEBC891-2562-4A51-9A07-32833D61A9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEEBC891-2562-4A51-9A07-32833D61A9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEEBC891-2562-4A51-9A07-32833D61A9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4F0B9B7-18CE-4E9B-B3C6-3B6656C6F1B4}
+	EndGlobalSection
+EndGlobal
