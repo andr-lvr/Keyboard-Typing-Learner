@@ -13,5 +13,8 @@ namespace Kewords_Typing_Learner
         {
             return words;
         }
+
+        public class FileOperation { };
+
     }
 }

@@ -1,0 +1,7 @@
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\bin\Debug\ConsoleApp51.exe.config
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\bin\Debug\ConsoleApp51.exe
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\bin\Debug\ConsoleApp51.pdb
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\obj\Debug\ConsoleApp51.csproj.AssemblyReference.cache
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\obj\Debug\ConsoleApp51.csproj.CoreCompileInputs.cache
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\obj\Debug\ConsoleApp51.exe
+E:\DEV\Git Hub Repository\Keywords-Typing-Learner\ConsoleApp51\ConsoleApp51\obj\Debug\ConsoleApp51.pdb

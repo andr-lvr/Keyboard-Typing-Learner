@@ -12,7 +12,9 @@ namespace Kewords_Typing_Learner
     {
         static void Main(string[] args)
         {
-            
+            General general = new General();
+            FileOperation.ReadFileFromPath(general);
+            FileOperation.WriteWordsToFile(general);
         }
     }
 }

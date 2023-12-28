@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kewords_Typing_Learner
 {
-     static class FileOperation {
+     internal static class FileOperation {
 
         // READ FROM FILE
         public static void ReadFileFromPath(General general)
@@ -16,6 +16,7 @@ namespace Kewords_Typing_Learner
             HashSet<string> _words = general.GetWords();
             Console.WriteLine("Enter the path to the file:");
             string filePath = Console.ReadLine();
+            filePath = filePath.Trim(new char[] { '"', '?', '<', '>', '|' }) ;
 
             // Clear existing words before reading new ones
             _words.Clear();
@@ -39,17 +40,16 @@ namespace Kewords_Typing_Learner
                 foreach (string word in wordsFromFile)
                 {
                     // Remove any leading or trailing punctuation
-                    string cleanedWord = word.Trim(new char[] { ' ', ',', '.', ';', ':', '!', '?' });
+                    char[] charsToRemove = { ' ', '"', ',', '.', ';', ':', '!', '\\', '/', '(', ')', '@', '#', '$', '%', '^', '&', '*', '_', '-', '+', '=', '~', '`', ']', '[', '{', '}', '?', '>', '<' };
+
+                    string cleanedWord = new string(word.Where(c => !charsToRemove.Contains(c)).ToArray());
 
                     // Add the cleaned word to the HashSet if it's not empty
                     if (!string.IsNullOrEmpty(cleanedWord))
                     {
                         // Use HashSet.Add directly instead of checking Contains
-                        if (uniqueWords.Add(cleanedWord))
-                        {
-                            // Handle repeated word (you can log or take any other action)
-                            Console.WriteLine($"Repeated word: {cleanedWord}");
-                        }
+                        uniqueWords.Add(cleanedWord);
+                        
                     }
                 }
             }
@@ -62,9 +62,11 @@ namespace Kewords_Typing_Learner
             return uniqueWords;
         }
 
+
         // WRITE TO FILE
-        public static void WriteWordsToFile(HashSet<string> _words)
+        public static void WriteWordsToFile(General general)
         {
+            HashSet<string> _words = general.GetWords();
             string downloadsFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Documents";
             string filePath = Path.Combine(downloadsFolder, "output.txt");
 
