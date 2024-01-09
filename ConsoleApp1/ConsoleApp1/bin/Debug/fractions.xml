@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ArrayOfFraction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fraction>
+    <Numerator>12</Numerator>
+    <Denominator>123</Denominator>
+  </Fraction>
+</ArrayOfFraction>
